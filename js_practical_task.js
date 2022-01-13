@@ -106,52 +106,62 @@ module.exports = {
         }
         return repittingString;
 
+    },
+    /**
+     * You must write a function redundant that takes in a string str and returns a function that returns str.
+     * ! Your function should return a function, not a string.
+     *
+     * @param {string} str
+     * @return {function}
+     *
+     * @example
+     *      const f1 = redundant("apple")
+     *      f1() ➞ "apple"
+     *
+     *      const f2 = redundant("pear")
+     *      f2() ➞ "pear"
+     *
+     *      const f3 = redundant("")
+     *      f3() ➞ ""
+     */
+    redundant: function redundant(str) {
+        return function () {
+            return str;
+        }
+    },
+    /**
+     * https://en.wikipedia.org/wiki/Tower_of_Hanoi
+     *
+     * @param {number} disks
+     * @return {number}
+     */
+    hanoi: function towerHanoi(disks) {
+        return 2 ** disks - 1;
+    },
+
+    /**
+     * You must create a function that multiplies two matricies (n x n each).
+     *
+     * @param {array} matrix1
+     * @param {array} matrix2
+     * @return {array}
+     *
+     */
+    multiplyMatrix: function matrixMultiplication(matrix1, matrix2) {
+        let n = matrix1.length;
+        let result = [];
+        for (var i = 0; i < n; i++) result[i] = [];
+        for (var k = 0; k < n; k++) {
+            for (var i = 0; i < n; i++) {
+                var t = 0;
+                for (var j = 0; j < n; j++) t += matrix1[i][j] * matrix2[j][k];
+                result[i][k] = t;
+            }
+        }
+        return result;
     }
-}
+};
 
-
-/**
- * You must write a function redundant that takes in a string str and returns a function that returns str.
- * ! Your function should return a function, not a string.
- *
- * @param {string} str
- * @return {function}
- *
- * @example
- *      const f1 = redundant("apple")
- *      f1() ➞ "apple"
- *
- *      const f2 = redundant("pear")
- *      f2() ➞ "pear"
- *
- *      const f3 = redundant("")
- *      f3() ➞ ""
- */
-function redundant(str) {
-
-}
-
-/**
- * https://en.wikipedia.org/wiki/Tower_of_Hanoi
- *
- * @param {number} disks
- * @return {number}
- */
-function towerHanoi(disks) {
-
-}
-
-/**
- * You must create a function that multiplies two matricies (n x n each).
- *
- * @param {array} matrix1
- * @param {array} matrix2
- * @return {array}
- *
- */
-function matrixMultiplication(matrix1, matrix2) {
-
-}
 
 /**
  * Create a gather function that accepts a string argument and returns another function.
