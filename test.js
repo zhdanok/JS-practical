@@ -8,34 +8,35 @@ const repeatter = require('./js_practical_task').repeatter;
 const redundant = require('./js_practical_task').redundant;
 const hanoi = require('./js_practical_task').hanoi;
 const multiply = require('./js_practical_task').multiplyMatrix;
+const func = require('./js_practical_task').func;
 
 
 describe('JS_practical_task secondsToDateLikeString', function () {
-    it('0 should return 01.06.2020', function ()  {
+    it('0 should return 01.06.2020', function () {
         assert.equal(secondsToDateLikeString(0), '01.06.2020')
     });
-    it('31536000 should return 01.06.2021', function ()  {
+    it('31536000 should return 01.06.2021', function () {
         assert.equal(secondsToDateLikeString(31536000), '01.06.2021')
     });
-    it('86400 should return 02.06.2020', function ()  {
+    it('86400 should return 02.06.2020', function () {
         assert.equal(secondsToDateLikeString(86400), '02.06.2020')
     });
 });
 
 describe('JS_practical_task secondsToDate', function () {
-    it('0 should return 2020-06-01T00:00:00.000Z', function ()  {
+    it('0 should return 2020-06-01T00:00:00.000Z', function () {
         let result = secToDate(0);
         let expected = new Date('2020-06-01T00:00:00.000Z');
         assert.deepEqual(result, expected);
-        
+
     });
-    it('31536000 should return 2021-06-01T00:00:00.000Z', function ()  {
+    it('31536000 should return 2021-06-01T00:00:00.000Z', function () {
         let result = secToDate(31536000);
         let expected = new Date('2021-06-01T00:00:00.000Z');
         assert.deepEqual(result, expected);
 
     });
-    it('86400 should return 2020-06-02T00:00:00.000Z', function ()  {
+    it('86400 should return 2020-06-02T00:00:00.000Z', function () {
         let result = secToDate(86400);
         let expected = new Date('2020-06-02T00:00:00.000Z');
         assert.deepEqual(result, expected);
@@ -123,3 +124,4 @@ describe('JS_practical_task Multiply Matrix', function () {
     });
 
 });
+
